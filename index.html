@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivalinga Narayanappa - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Shivalinga Narayanappa</h1>
+                <h2>Graduate Software Developer</h2>
+                <p>Specializing in Data Science, AI, and Front-end Development</p>
+                <a href="#contact" class="cta-button">Get in Touch</a>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Dedicated Data Science and AI graduate with strong analytical skills, specializing in front-end development, data visualization, and cloud-native solutions. Experienced in HTML, CSS, JavaScript, and frameworks like Angular for complex web applications. Proficient in version control and development tools. Eager to learn new technologies such as Adobe Experience Cloud.</p>
+        </section>
+
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="experience-item">
+                <h3>Software Engineer Intern</h3>
+                <p>Huxan Group Ltd | London, United Kingdom (Part-time)</p>
+                <p>September 2024 - Present</p>
+                <ul>
+                    <li>Developing a retail mobile application using Python and associated ML libraries.</li>
+                    <li>Collaborating with the team to integrate backend services and APIs.</li>
+                    <li>Completed tasks like hiring new candidates according to the requirement of project.</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <h3>System Engineer</h3>
+                <p>Infosys Ltd | Bengaluru, India</p>
+                <p>August 2022 - August 2023</p>
+                <ul>
+                    <li>Completed full-stack development training, building a retail app that enhanced user experience by 20%.</li>
+                    <li>Created machine learning models to predict customer buying habits, resulting in a 15% improvement in order value.</li>
+                    <li>Gained proficiency in Finacle (FNSP), Infosys' core banking solution.</li>
+                    <li>Implemented unit testing and integration testing practices, reducing bugs by 30%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card" data-project="stock-prediction">
+                    <h3>Stock Price Prediction</h3>
+                    <p>LSTM-based machine learning model for stock price prediction.</p>
+                    <button class="read-more">Read More</button>
+                </div>
+                <div class="project-card" data-project="ecommerce">
+                    <h3>E-commerce Platform</h3>
+                    <p>Scalable e-commerce solution using Spring Boot and Angular.</p>
+                    <button class="read-more">Read More</button>
+                </div>
+                <div class="project-card" data-project="student-performance">
+                    <h3>Student Performance Prediction</h3>
+                    <p>ML model for predicting student performance using Python and scikit-learn.</p>
+                    <button class="read-more">Read More</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Programming & Web</h3>
+                    <div class="skill-list">
+                        <div class="skill-item" data-skill="Python">Python</div>
+                        <div class="skill-item" data-skill="SQL">SQL</div>
+                        <div class="skill-item" data-skill="Java">Java</div>
+                        <div class="skill-item" data-skill="HTML">HTML</div>
+                        <div class="skill-item" data-skill="CSS">CSS</div>
+                        <div class="skill-item" data-skill="JavaScript">JavaScript</div>
+                        <div class="skill-item" data-skill="Angular">Angular</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Machine Learning</h3>
+                    <div class="skill-list">
+                        <div class="skill-item" data-skill="Supervised Learning">Supervised Learning</div>
+                        <div class="skill-item" data-skill="Unsupervised Learning">Unsupervised Learning</div>
+                        <div class="skill-item" data-skill="Deep Learning">Deep Learning</div>
+                        <div class="skill-item" data-skill="PyTorch">PyTorch</div>
+                        <div class="skill-item" data-skill="Keras">Keras</div>
+                        <div class="skill-item" data-skill="Scikit-learn">Scikit-learn</div>
+                        <div class="skill-item" data-skill="Pandas">Pandas</div>
+                        <div class="skill-item" data-skill="NumPy">NumPy</div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools & Platforms</h3>
+                    <div class="skill-list">
+                        <div class="skill-item" data-skill="Azure">Azure</div>
+                        <div class="skill-item" data-skill="Git">Git</div>
+                        <div class="skill-item" data-skill="Power BI">Power BI</div>
+                        <div class="skill-item" data-skill="Jupyter Notebook">Jupyter Notebook</div>
+                        <div class="skill-item" data-skill="Google Colab">Google Colab</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="mailto:msshiva286@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2024 Shivalinga Narayanappa. All rights reserved.</p>
+    </footer>
+
+    <!-- Project Modals -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <h3>Technologies Used:</h3>
+            <ul id="modal-technologies"></ul>
+            <h3>Key Features:</h3>
+            <ul id="modal-features"></ul>
+        </div>
+    </div>
+</body>
+</html>
