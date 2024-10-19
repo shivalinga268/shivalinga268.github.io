@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shivalinga Narayanappa - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <div id="particles-js"></div>
+    
     <header>
         <nav>
+            <div class="logo">SHIVALINGA N</div>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#contact">Contact</a></li>
+                
             </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </nav>
     </header>
 
@@ -26,135 +35,247 @@
         <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Shivalinga Narayanappa</h1>
-                <h2>Graduate Software Developer</h2>
-                <p>Specializing in Data Science, AI, and Front-end Development</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
-            </div>
-        </section>
-
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Dedicated Data Science and AI graduate with strong analytical skills, specializing in front-end development, data visualization, and cloud-native solutions. Experienced in HTML, CSS, JavaScript, and frameworks like Angular for complex web applications. Proficient in version control and development tools. Eager to learn new technologies such as Adobe Experience Cloud.</p>
-        </section>
-
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <div class="experience-item">
-                <h3>Software Engineer Intern</h3>
-                <p>Huxan Group Ltd | London, United Kingdom (Part-time)</p>
-                <p>September 2024 - Present</p>
-                <ul>
-                    <li>Developing a retail mobile application using Python and associated ML libraries.</li>
-                    <li>Collaborating with the team to integrate backend services and APIs.</li>
-                    <li>Completed tasks like hiring new candidates according to the requirement of project.</li>
-                </ul>
-            </div>
-            <div class="experience-item">
-                <h3>System Engineer</h3>
-                <p>Infosys Ltd | Bengaluru, India</p>
-                <p>August 2022 - August 2023</p>
-                <ul>
-                    <li>Completed full-stack development training, building a retail app that enhanced user experience by 20%.</li>
-                    <li>Created machine learning models to predict customer buying habits, resulting in a 15% improvement in order value.</li>
-                    <li>Gained proficiency in Finacle (FNSP), Infosys' core banking solution.</li>
-                    <li>Implemented unit testing and integration testing practices, reducing bugs by 30%.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project-grid">
-                <div class="project-card" data-project="stock-prediction">
-                    <h3>Stock Price Prediction</h3>
-                    <p>LSTM-based machine learning model for stock price prediction.</p>
-                    <button class="read-more">Read More</button>
+                <h2>I'm a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+                <p>Graduate Software Developer | Data Scientist | AI Enthusiast</p>
+                <div class="cta-buttons">
+                    <a href="path/to/your-resume.pdf" download class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
                 </div>
-                <div class="project-card" data-project="ecommerce">
-                    <h3>E-commerce Platform</h3>
-                    <p>Scalable e-commerce solution using Spring Boot and Angular.</p>
-                    <button class="read-more">Read More</button>
+                <div class="social-links">
+                    <a href="mailto:msshiva286@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/Shivalinga/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.hackerrank.com/msshiva26" target="_blank" rel="noopener noreferrer" aria-label="HackerRank"><i class="fab fa-hackerrank"></i></a>
                 </div>
-                <div class="project-card" data-project="student-performance">
-                    <h3>Student Performance Prediction</h3>
-                    <p>ML model for predicting student performance using Python and scikit-learn.</p>
-                    <button class="read-more">Read More</button>
+            </div>
+        </section>
+
+        <section id="about" class="alternate-bg">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="profile-picture">
+                        <img src="my_photo.jpeg" alt="Shivalinga Narayanappa">
+                    </div>
+                    <div class="about-text">
+                        <p>Dedicated Data Science and AI graduate with strong analytical skills, specializing in front-end development, data visualization, and cloud-native solutions. Experienced in HTML, CSS, JavaScript, and frameworks like Angular for complex web applications. Proficient in version control and development tools. Eager to learn new technologies such as Adobe Experience Cloud. Seeking to leverage technical and interpersonal skills to drive business growth through innovative web development and robust e-commerce solutions.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Programming & Web</h3>
-                    <div class="skill-list">
-                        <div class="skill-item" data-skill="Python">Python</div>
-                        <div class="skill-item" data-skill="SQL">SQL</div>
-                        <div class="skill-item" data-skill="Java">Java</div>
-                        <div class="skill-item" data-skill="HTML">HTML</div>
-                        <div class="skill-item" data-skill="CSS">CSS</div>
-                        <div class="skill-item" data-skill="JavaScript">JavaScript</div>
-                        <div class="skill-item" data-skill="Angular">Angular</div>
+            <div class="container">
+                <h2 class="section-title">Skills & Technologies</h2>
+                <div id="skills-section" class="skills-grid"></div>
+            </div>
+        </section>
+
+        <section id="experience" class="alternate-bg">
+            <div class="container">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Software Engineer Intern</h3>
+                            <h4>Huxan Group Ltd, London, UK</h4>
+                            <p class="date">September 2024 - Present</p>
+                            <ul>
+                                <li>Developing a retail mobile application using Python and associated ML libraries.</li>
+                                <li>Collaborating with the team to integrate backend services and APIs.</li>
+                                <li>Completed tasks like hiring new candidates according to the requirement of project.</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Machine Learning</h3>
-                    <div class="skill-list">
-                        <div class="skill-item" data-skill="Supervised Learning">Supervised Learning</div>
-                        <div class="skill-item" data-skill="Unsupervised Learning">Unsupervised Learning</div>
-                        <div class="skill-item" data-skill="Deep Learning">Deep Learning</div>
-                        <div class="skill-item" data-skill="PyTorch">PyTorch</div>
-                        <div class="skill-item" data-skill="Keras">Keras</div>
-                        <div class="skill-item" data-skill="Scikit-learn">Scikit-learn</div>
-                        <div class="skill-item" data-skill="Pandas">Pandas</div>
-                        <div class="skill-item" data-skill="NumPy">NumPy</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>System Engineer</h3>
+                            <h4>Infosys Ltd, Bengaluru, India</h4>
+                            <p class="date">August 2022 – August 2023</p>
+                            <ul>
+                                <li>Completed full-stack development training (HTML, CSS, Bootstrap, Spring Boot, Angular), building a retail app that enhanced user experience by 20%.</li>
+                                <li>Demonstrated initiative by creating machine learning models to predict customer buying habits, resulting in a 15% improvement in order value and a 25% increase in customer satisfaction.</li>
+                                <li>Gained proficiency in Finacle (FNSP), Infosys' core banking solution, learning to configure and customize modules for diverse banking operations.</li>
+                                <li>Implemented unit testing and integration testing practices, improving code quality and reducing bugs by 30%.</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Platforms</h3>
-                    <div class="skill-list">
-                        <div class="skill-item" data-skill="Azure">Azure</div>
-                        <div class="skill-item" data-skill="Git">Git</div>
-                        <div class="skill-item" data-skill="Power BI">Power BI</div>
-                        <div class="skill-item" data-skill="Jupyter Notebook">Jupyter Notebook</div>
-                        <div class="skill-item" data-skill="Google Colab">Google Colab</div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Student Intern</h3>
+                            <h4>Jaguar Land Rover, Bengaluru, India</h4>
+                            <p class="date">August 2021 – September 2021</p>
+                            <ul>
+                                <li>Analyzed costs using Excel for 5 different departments, identifying areas for cost reduction within the given deadlines.</li>
+                                <li>Resulted in efficient customer service by preparing 10+ reports and submitting results to upper management.</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form id="contact-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
+        <section id="education">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>MSc Data Science and Artificial Intelligence</h3>
+                            <h4>University of Liverpool, UK</h4>
+                            <p class="date">September 2023 - November 2024</p>
+                            <p><strong>Grade:</strong> Distinction (predicted)</p>
+                            <p>Member of university's Data Science and AI Society, Course Representative</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>B.E Mechanical Engineering</h3>
+                            <h4>MVJ College of Engineering, Bengaluru, India</h4>
+                            <p class="date">August 2018 - July 2022</p>
+                            <p><strong>Grade:</strong> Distinction</p>
+                            <p>Member of university's technical clubs, Hackathon winner, Ideation winner</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <section id="projects" class="alternate-bg">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Stock Price Prediction</h3>
+                        <p>Developed an LSTM-based machine learning model to predict stock prices, achieving 85% accuracy. Processed and analyzed large financial datasets using PySpark and Pandas.</p>
+                        <div class="tech-tags">
+                            <span>LSTM</span>
+                            <span>PySpark</span>
+                            <span>Pandas</span>
+                            <span>Power BI</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>E-commerce Platform</h3>
+                        <p>Developed a scalable e-commerce platform using Spring Boot and Angular. Implemented machine learning models to predict customer buying habits, resulting in a 15% improvement in order value.</p>
+                        <div class="tech-tags">
+                            <span>Spring Boot</span>
+                            <span>Angular</span>
+                            <span>Git</span>
+                            <span>Scrum</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Student Performance Prediction</h3>
+                        <p>Built an ML model to predict student performance with 92% accuracy using Python and scikit-learn. Analyzed and interpreted data from 5,000+ students using classification and regression algorithms.</p>
+                        <div class="tech-tags">
+                            <span>Python</span>
+                            <span>scikit-learn</span>
+                            <span>XGBoost</span>
+                            <span>Random Forest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certifications-container">
+                    <div class="certification-item">
+                        <h3>Power BI Essential Training</h3>
+                        <p class="issuer">National Association of State Boards of Accountancy (NASBA)</p>
+                        <p class="issue-date">Issued April 2024</p>
+                    </div>
+                    <div class="certification-item">
+                        <h3>Java SE8 Developer</h3>
+                        <p class="issuer">Infosys</p>
+                        <p class="issue-date">Issued April 2023</p>
+                    </div>
+                    <div class="certification-item">
+                        <h3>Azure SQL Database</h3>
+                        <p class="issuer">Microsoft</p>
+                        <p class="issue-date">In Progress</p>
+                    </div>
+                    <div class="certification-item">
+                        <h3>Advanced Power BI</h3>
+                        <p class="issuer">Microsoft</p>
+                        <p class="issue-date">In Progress</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="achievements" class="alternate-bg">
+            <div class="container">
+                <h2 class="section-title">Achievements</h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <img src="path/to/hackathon-image.jpg" alt="Hackathon Winner" class="achievement-image">
+                        <div class="achievement-content">
+                            <h3>Hackathon Winner</h3>
+                            <p>First place at XYZ Hackathon 2023</p>
+                            <p class="achievement-date">June 2023</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <img src="path/to/ideathon-image.jpg" alt="Ideathon Finalist" class="achievement-image">
+                        <div class="achievement-content">
+                            <h3>Ideathon Finalist</h3>
+                            <p>Top 5 at National Ideathon Challenge</p>
+                            <p class="achievement-date">August 2022</p>
+                        </div>
+                    </div>
+                    <div class="achievement-card">
+                        <img src="path/to/national-event-image.jpg" alt="National Event Winner" class="achievement-image">
+                        <div class="achievement-content">
+                            <h3>National Event Winner</h3>
+                            <p>First place in ABC National Tech Competition</p>
+                            <p class="achievement-date">November 2023</p>
+                        </div>
+                    </div>
+                    <!-- Add more achievement cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" >
+            <div class="container">
+                <h2 class="section-title">Contact Me</h2>
+                <div class="contact-container">
+                    <form id="contact-form" class="contact-form">
+                        <input type="text" id="name" placeholder="Name" required>
+                        <input type="email" id="email" placeholder="Email" required>
+                        <input type="text" id="subject" placeholder="Subject">
+                        <textarea id="message" placeholder="Message" required></textarea>
+                        <button type="submit">Send Message</button>
+                    </form>
+                    <div class="contact-info">
+                        <h3>Get in Touch</h3>
+                        <p>If you've got a project in mind or want to discuss potential opportunities, I'd love to hear from you! Feel free to reach out using the contact form or through any of the following methods:</p>
+                        <ul>
+                            <li><i class="fas fa-user"></i> Shivalinga Narayanappa</li>
+                            <li><i class="fas fa-map-marker-alt"></i> L7 4JG, Liverpool</li>
+                            <li><i class="fas fa-envelope"></i> msshiva286@gmail.com</li>
+                            <li><i class="fas fa-phone"></i> +44 7721964055</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+           
     </main>
 
     <footer>
-        <div class="social-links">
-            <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:msshiva286@gmail.com"><i class="fas fa-envelope"></i></a>
-        </div>
-        <p>&copy; 2024 Shivalinga Narayanappa. All rights reserved.</p>
+        <p>&copy; <span id="current-year"></span> Shivalinga Narayanappa. All rights reserved.</p>
     </footer>
 
-    <!-- Project Modals -->
-    <div id="project-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 id="modal-title"></h2>
-            <p id="modal-description"></p>
-            <h3>Technologies Used:</h3>
-            <ul id="modal-technologies"></ul>
-            <h3>Key Features:</h3>
-            <ul id="modal-features"></ul>
-        </div>
-    </div>
+    <button class="scroll-top" aria-label="Scroll to top">↑</button>
+    <button class="theme-switcher" aria-label="Switch theme">🌓</button>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="skills.js"></script>
 </body>
 </html>
