@@ -3,10 +3,9 @@
 :root {
     --primary-color: #00a8e8;
     --secondary-color: #00e676;
-    --background-color: #121212;
     --text-color: #ffffff;
-    --card-background: #1e1e1e;
-    --alternate-bg: #1a1a1a;
+    --card-background: rgba(30, 30, 30, 0.8);
+    --solid-background: #121212;
 }
 
 * {
@@ -19,8 +18,8 @@ body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--background-color);
     overflow-x: hidden;
+    background-color: var(--solid-background);
 }
 
 .container {
@@ -36,6 +35,11 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+main {
+    position: relative;
+    z-index: 2;
 }
 
 /* Header and Navigation */
@@ -97,10 +101,24 @@ section {
     margin-bottom: 2rem;
     text-align: center;
     color: var(--primary-color);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-.alternate-bg {
-    background-color: var(--alternate-bg);
+.section-title:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.gif-bg {
+    background-image: url('Cwgf.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.solid-bg {
+    background-color: var(--solid-background);
 }
 
 /* Home Section */
@@ -131,11 +149,12 @@ section {
     color: var(--primary-color);
     font-size: 1.5rem;
     margin: 0 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.1);
+    color: var(--secondary-color);
 }
 
 /* About Section */
@@ -160,7 +179,7 @@ section {
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
 }
@@ -171,37 +190,28 @@ section {
     padding: 1.5rem;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transform: scale(0.9);
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    transition: all 0.3s ease;
 }
 
-.skill-item.animate {
-    opacity: 1;
-    transform: scale(1);
+.skill-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .skill-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+    transform: scale(1.2);
 }
 
 .skill-name {
     font-size: 1.2rem;
     color: var(--primary-color);
     font-weight: 600;
-}
-
-.skill-item:nth-child(3n+1) .skill-icon {
-    color: var(--primary-color);
-}
-
-.skill-item:nth-child(3n+2) .skill-icon {
-    color: var(--secondary-color);
-}
-
-.skill-item:nth-child(3n) .skill-icon {
-    color: #ff6b6b;
 }
 
 /* Experience & Education Section */
@@ -227,14 +237,6 @@ section {
     position: relative;
     background-color: inherit;
     width: 50%;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.timeline-item.animate {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .timeline-item:nth-child(odd) {
@@ -252,7 +254,7 @@ section {
     height: 25px;
     right: -17px;
     background-color: var(--primary-color);
-    border: 4px solid var(--background-color);
+    border: 4px solid var(--solid-background);
     top: 15px;
     border-radius: 50%;
     z-index: 1;
@@ -299,11 +301,12 @@ section {
     background-color: var(--card-background);
     padding: 1.5rem;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-card h3 {
@@ -318,7 +321,7 @@ section {
 .tech-tags span {
     display: inline-block;
     background-color: var(--primary-color);
-    color: var(--background-color);
+    color: var(--solid-background);
     padding: 0.3rem 0.6rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -336,11 +339,12 @@ section {
     background-color: var(--card-background);
     padding: 1.5rem;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .certification-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .certification-item h3 {
@@ -389,16 +393,17 @@ section {
 
 .contact-form button {
     background-color: var(--primary-color);
-    color: var(--background-color);
+    color: var(--solid-background);
     border: none;
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .contact-form button:hover {
     background-color: var(--secondary-color);
+    transform: translateY(-3px);
 }
 
 .contact-info {
@@ -432,7 +437,7 @@ footer {
     bottom: 20px;
     right: 20px;
     background-color: var(--primary-color);
-    color: var(--background-color);
+    color: var(--solid-background);
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -440,12 +445,16 @@ footer {
     font-size: 20px;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, transform 0.3s ease;
     z-index: 1000;
 }
 
 .scroll-top.show {
     opacity: 1;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
 }
 
 /* Theme switcher */
@@ -458,14 +467,6 @@ footer {
     font-size: 24px;
     cursor: pointer;
     z-index: 1001;
-}
-
-/* Light theme */
-body.light-theme {
-    --background-color: #f0f0f0;
-    --text-color: #333333;
-    --card-background: #ffffff;
-    --alternate-bg: #e0e0e0;
 }
 
 /* Animations */
@@ -539,92 +540,160 @@ body.light-theme {
         right: 10px;
     }
 }
-.cta-buttons {
-    margin-bottom: 2rem;
+
+/* Alternating background for sections */
+#home { background-image: url('Cwgf.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+#about { background-color: var(--solid-background); }
+#skills { background-image: url('Cwgf.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+#experience { background-color: var(--solid-background); }
+#education { background-image: url('Cwgf.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+#projects { background-color: var(--solid-background); }
+#certifications { background-image: url('Cwgf.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+#achievements { background-color: var(--solid-background); }
+#contact { background-image: url('Cwgf.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+
+/* Heading hover effect */
+h1, h2, h3, h4, h5, h6 {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-.btn {
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+/* Typed text cursor */
+.cursor {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-primary {
+    width: 3px;
     background-color: var(--primary-color);
-    color: var(--background-color);
+    margin-left: 0.1rem;
+    animation: blink 0.7s infinite;
 }
 
-.btn-primary:hover {
-    background-color: var(--secondary-color);
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 168, 232, 0.3);
+.cursor.typing {
+    animation: none;
 }
 
-.btn i {
-    margin-right: 0.5rem;
-}
-.achievements-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.achievement-card {
-    background-color: var(--card-background);
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+@keyframes blink {
+    0% { background-color: var(--primary-color); }
+    49% { background-color: var(--primary-color); }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100% { background-color: var(--primary-color); }
 }
 
-.achievement-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+/* Ensure proper contrast for all text */
+* {
+    color: var(--text-color);
 }
 
-.achievement-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+/* Add subtle text shadow for better readability on varied backgrounds */
+h1, h2, h3, h4, h5, h6 {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.achievement-content {
-    padding: 1.5rem;
+/* Ensure proper line height for better readability */
+body {
+    line-height: 1.6;
 }
 
-.achievement-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-}
-
-.achievement-content p {
-    margin-bottom: 0.5rem;
-}
-
-.achievement-date {
-    font-style: italic;
-    color: var(--secondary-color);
-}
-
-@media (max-width: 768px) {
-    .achievements-grid {
-        grid-template-columns: 1fr;
+/* Add backdrop filter for a frosted glass effect on cards if supported */
+@supports (backdrop-filter: blur(10px)) {
+    .project-card,
+    .certification-item,
+    .achievement-card,
+    .timeline-content,
+    .skill-item {
+        backdrop-filter: blur(10px);
+        background-color: rgba(30, 30, 30, 0.7);
     }
 }
 
-/* Add this new CSS rule */
-#contact {
-    background-color: var(--alternate-bg);
+/* Adjust font sizes for better hierarchy */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+h5 { font-size: 1.25rem; }
+h6 { font-size: 1rem; }
+
+/* Ensure proper spacing for list items */
+li:not(:last-child) {
+    margin-bottom: 0.5rem;
 }
 
-/* Ensure other sections have the correct background */
-#about, #experience, #projects, #achievements {
-    background-color: var(--alternate-bg);
+/* Style for inline code if needed */
+code {
+    background-color: rgba(0, 168, 232, 0.1);
+    color: var(--primary-color);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
 }
 
-#home, #skills, #education, #certifications {
-    background-color: var(--background-color);
+/* Ensure proper contrast for placeholder text */
+::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Ensure proper spacing for form elements */
+form > * + * {
+    margin-top: 1rem;
+}
+
+/* Add a subtle gradient overlay to the background for better text contrast if needed */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ensure content is above the gradient overlay */
+main {
+    position: relative;
+    z-index: 2;
+}
+
+/* Skill icon colors */
+.skill-item:nth-child(5n+1) .skill-icon { color: #FF6B6B; }
+.skill-item:nth-child(5n+2) .skill-icon { color: #4ECDC4; }
+.skill-item:nth-child(5n+3) .skill-icon { color: #45B7D1; }
+.skill-item:nth-child(5n+4) .skill-icon { color: #F7B733; }
+.skill-item:nth-child(5n+5) .skill-icon { color: #C06C84; }
+
+/* Light theme styles */
+body.light-theme {
+    --primary-color: #0056b3;
+    --secondary-color: #28a745;
+    --text-color: #333333;
+    --card-background: rgba(255, 255, 255, 0.8);
+    --solid-background: #f8f9fa;
+}
+
+body.light-theme::before {
+    background: linear-gradient(to bottom, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+}
+
+body.light-theme .timeline::after {
+    background-color: var(--primary-color);
+}
+
+body.light-theme .timeline-item::after {
+    background-color: var(--primary-color);
+    border: 4px solid var(--solid-background);
+}
+
+body.light-theme .scroll-top,
+body.light-theme .contact-form button {
+    color: var(--text-color);
+}
+
+body.light-theme .tech-tags span {
+    color: var(--solid-background);
 }

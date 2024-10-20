@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         else {
             cursorSpan.classList.remove("typing");
             textArrayIndex++;
-            if(textArrayIndex>=textArray.length) textArrayIndex=0;
+            if(textArrayIndex >= textArray.length) textArrayIndex=0;
             setTimeout(type, typingDelay + 1100);
         }
     }
@@ -192,43 +192,6 @@ document.addEventListener('DOMContentLoaded', function() {
     fadeElements.forEach(element => {
         fadeObserver.observe(element);
     });
-    // Skills section
-    const skills = [
-        { name: 'Python', icon: '🐍' },
-        { name: 'SQL', icon: '🗃️' },
-        { name: 'Java', icon: '☕' },
-        { name: 'HTML', icon: '📄' },
-        { name: 'CSS', icon: '🎨' },
-        { name: 'JavaScript', icon: 'JS' },
-        { name: 'Angular', icon: 'Ng' },
-        { name: 'Azure', icon: '☁️' },
-        { name: 'Power BI', icon: '📊' },
-        { name: 'Git', icon: '🔀' },
-        { name: 'Machine Learning', icon: '🤖' },
-        { name: 'Deep Learning', icon: '🧠' }
-    ];
-
-    const skillsSection = document.getElementById('skills-section');
-    if (skillsSection) {
-        const skillsHTML = skills.map(skill => `
-            <div class="skill-item">
-                <div class="skill-icon">${skill.icon}</div>
-                <div class="skill-name">${skill.name}</div>
-            </div>
-        `).join('');
-        skillsSection.innerHTML = skillsHTML;
-    }
-
-    // Project cards hover effect
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px)';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = 'translateY(0)';
-        });
-    });
 
     // Form submission
     const contactForm = document.querySelector('.contact-form');
@@ -262,54 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Lazy loading for images
-    const lazyImages = document.querySelectorAll('img[data-src]');
-    const lazyLoad = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                observer.unobserve(img);
-            }
-        });
-    };
-
-    const imageObserver = new IntersectionObserver(lazyLoad, { threshold: 0.1 });
-    lazyImages.forEach(img => imageObserver.observe(img));
-
-    // Dynamic copyright year
-    const currentYear = new Date().getFullYear();
-    document.querySelector('footer p').innerHTML = `&copy; ${currentYear} Shivalinga Narayanappa. All rights reserved.`;
-
-    // Add animation to timeline items
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    const animateTimeline = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
-        });
-    };
-
-    const timelineObserver = new IntersectionObserver(animateTimeline, { threshold: 0.1 });
-    timelineItems.forEach(item => timelineObserver.observe(item));
-
-    // Skill progress animation
-    const skillItems = document.querySelectorAll('.skill-item');
-    const animateSkills = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate');
-                observer.unobserve(entry.target);
-            }
-        });
-    };
-
-    const skillObserver = new IntersectionObserver(animateSkills, { threshold: 0.1 });
-    skillItems.forEach(item => skillObserver.observe(item));
-
     // Theme switcher
     const themeSwitcher = document.createElement('button');
     themeSwitcher.innerHTML = '🌓';
@@ -319,9 +234,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let isDarkTheme = true; // Start with dark theme
 
+    function setTheme(isDark) {
+        document.body.classList.toggle('light-theme', !isDark);
+        document.body.style.setProperty('--primary-color', isDark ? '#00a8e8' : '#0056b3');
+        document.body.style.setProperty('--secondary-color', isDark ? '#00e676' : '#28a745');
+        document.body.style.setProperty('--text-color', isDark ? '#ffffff' : '#333333');
+        document.body.style.setProperty('--card-background', isDark ? 'rgba(30, 30, 30, 0.8)' : 'rgba(255, 255, 255, 0.8)');
+        document.body.style.setProperty('--solid-background', isDark ? '#121212' : '#f8f9fa');
+    }
+
     themeSwitcher.addEventListener('click', () => {
         isDarkTheme = !isDarkTheme;
-        document.body.classList.toggle('light-theme', !isDarkTheme);
+        setTheme(isDarkTheme);
         localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
     });
 
@@ -329,47 +253,85 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         isDarkTheme = savedTheme === 'dark';
-        document.body.classList.toggle('light-theme', !isDarkTheme);
+        setTheme(isDarkTheme);
     }
 
-    // Add custom cursor
-    const cursor = document.createElement('div');
-    cursor.classList.add('custom-cursor');
-    document.body.appendChild(cursor);
+    // Dynamic copyright year
+    const currentYear = new Date().getFullYear();
+    document.querySelector('footer p').innerHTML = `&copy; ${currentYear} Shivalinga Narayanappa. All rights reserved.`;
 
-    document.addEventListener('mousemove', (e) => {
-        cursor.style.left = e.clientX + 'px';
-        cursor.style.top = e.clientY + 'px';
+    // Interactive effects for home page, main buttons, and headings
+    const homeSection = document.querySelector('#home');
+    const mainButtons = document.querySelectorAll('.btn');
+    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+
+    // Parallax effect for home section
+    window.addEventListener('scroll', () => {
+        const scrollPosition = window.pageYOffset;
+        homeSection.style.backgroundPositionY = scrollPosition * 0.7 + 'px';
     });
 
-    // Performance optimization
-    window.addEventListener('load', () => {
-        // Defer non-critical scripts
-        const deferredScripts = document.querySelectorAll('script[data-defer]');
-        deferredScripts.forEach(script => {
-            script.setAttribute('src', script.getAttribute('data-defer'));
+    // Glow effect for main buttons
+    mainButtons.forEach(button => {
+        button.addEventListener('mousemove', (e) => {
+            const rect = button.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            button.style.setProperty('--x', `${x}px`);
+            button.style.setProperty('--y', `${y}px`);
+            button.classList.add('btn-glow');
+        });
+
+        button.addEventListener('mouseleave', () => {
+            button.classList.remove('btn-glow');
         });
     });
-});
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('contact-form');
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
+    // 3D tilt effect for headings
+    headings.forEach(heading => {
+        heading.addEventListener('mousemove', (e) => {
+            const rect = heading.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const angleX = (y - centerY) / 20;
+            const angleY = (centerX - x) / 20;
+            
+            heading.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
+        });
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-
-        const mailtoLink = `mailto:msshiva286@gmail.com?subject=${encodeURIComponent(subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-
-        window.location.href = mailtoLink;
-
-        // Optional: Reset the form
-        form.reset();
-
-        // Optional: Show a confirmation message
-        alert('Thank you for your message. Your default email client should now open with a pre-filled email. If it doesn\'t, please send your message directly to msshiva286@gmail.com');
+        heading.addEventListener('mouseleave', () => {
+            heading.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+        });
     });
+
+    // Add ripple effect to buttons
+    function createRipple(event) {
+        const button = event.currentTarget;
+        const circle = document.createElement('span');
+        const diameter = Math.max(button.clientWidth, button.clientHeight);
+        const radius = diameter / 2;
+
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+        circle.classList.add('ripple');
+
+        const ripple = button.getElementsByClassName('ripple')[0];
+
+        if (ripple) {
+            ripple.remove();
+        }
+
+        button.appendChild(circle);
+    }
+
+    const buttons = document.getElementsByTagName('button');
+    for (const button of buttons) {
+        button.addEventListener('click', createRipple);
+    }
 });

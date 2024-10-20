@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id="particles-js"></div>
+    <div id="background-container"></div>
     
     <header>
         <nav>
@@ -23,7 +24,6 @@
                 <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#contact">Contact</a></li>
-                
             </ul>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -51,7 +51,7 @@
             </div>
         </section>
 
-        <section id="about" class="alternate-bg">
+        <section id="about" class="solid-bg">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
                 <div class="about-content">
@@ -65,10 +65,13 @@
             </div>
         </section>
 
-        <section id="skills">
+    
+        <section id="skills" class="alternate-bg">
             <div class="container">
                 <h2 class="section-title">Skills & Technologies</h2>
-                <div id="skills-section" class="skills-grid"></div>
+                <div id="skills-section" class="skills-grid">
+                    <!-- Skills will be dynamically added here -->
+                </div>
             </div>
         </section>
 
@@ -207,6 +210,7 @@
                 </div>
             </div>
         </section>
+
         <section id="achievements" class="alternate-bg">
             <div class="container">
                 <h2 class="section-title">Achievements</h2>
@@ -218,7 +222,8 @@
                             <p>Crew member of Team Xtreme Squad,(Uni's technical club), overall national champions in Go-Kart competition by Adithya College and Society of Innovation Minds. Won best endurance, sledge pull, acceleration; first to clear Technical Inspection; runners-up in auto crossing and build quality. Demonstrated innovative design, engineering precision, and teamwork. Applied mechanical engineering principles in high-performance scenarios, enhancing problem-solving and performance optimization skills.</p>
                             <p class="achievement-date">September 2018</p>
                         </div>
-                    </div> <div class="achievement-card">
+                    </div>
+                    <div class="achievement-card">
                         <img src="skillindia.jpeg" alt="Hackathon Winner" class="achievement-image">
                         <div class="achievement-content">
                             <h3>Hackathon Winner</h3>
@@ -226,7 +231,6 @@
                             <p class="achievement-date">June 2020</p>
                         </div>
                     </div>
-                   
                     <div class="achievement-card">
                         <img src="bike.jpeg" alt="National Event Winner" class="achievement-image">
                         <div class="achievement-content">
@@ -235,12 +239,11 @@
                             <p class="achievement-date">December 2022</p>
                         </div>
                     </div>
-                    <!-- Add more achievement cards as needed -->
                 </div>
             </div>
         </section>
 
-        <section id="contact" >
+        <section id="contact">
             <div class="container">
                 <h2 class="section-title">Contact Me</h2>
                 <div class="contact-container">
@@ -264,7 +267,6 @@
                 </div>
             </div>
         </section>
-           
     </main>
 
     <footer>
@@ -276,6 +278,7 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
-    <script src="skills.js"></script>
+    <script src="SkillsSection.js"></script>
+    <script src="background-animation.js"></script>
 </body>
 </html>

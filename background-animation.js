@@ -31,11 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const dx = this.x - centerX;
             const dy = this.y - centerY;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            
+
             // Adjust rotation speed based on distance from center
             const rotationSpeed = 0.0001 / (distance / 500);
-            
             const newAngle = Math.atan2(dy, dx) + rotationSpeed;
+
             this.x = centerX + distance * Math.cos(newAngle);
             this.y = centerY + distance * Math.sin(newAngle);
 
