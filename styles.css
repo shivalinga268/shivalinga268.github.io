@@ -110,7 +110,7 @@ section {
 }
 
 .gif-bg {
-    background-image: url('Cwgf.gif');
+    background-image: url('QWc9.gif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -215,6 +215,7 @@ section {
 }
 
 /* Experience & Education Section */
+
 .timeline {
     position: relative;
     max-width: 1000px;
@@ -283,6 +284,7 @@ section {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
+
 
 .timeline-content .date {
     color: var(--text-color);
@@ -542,7 +544,8 @@ footer {
 }
 
 /* Alternating background for sections */
-#home { background-image: url('Cwgf.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+
+/*#home { background-image: url('QWc9.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
 #about { background-color: var(--solid-background); }
 #skills { background-image: url('Cwgf.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
 #experience { background-color: var(--solid-background); }
@@ -551,7 +554,115 @@ footer {
 #certifications { background-image: url('Cwgf.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
 #achievements { background-color: var(--solid-background); }
 #contact { background-image: url('Cwgf.gif'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+*/
+#about { background-color: var(--solid-background); }
+#experience { background-color: var(--solid-background); }
+#projects { background-color: var(--solid-background); }
+#achievements { background-color: var(--solid-background); }
+/* ... (previous CSS rules remain the same) ... */
 
+
+/* Specific styles for About, Experience, Projects, and Achievements sections */
+#about,
+#experience,
+#projects,
+#achievements {
+    position: relative;
+    background-color: #ffffff;
+    color: #333333;
+    padding: 4rem 0;
+}
+
+/* Adjust text and element styles for these specific sections */
+#about .about-content,
+#experience .timeline-content,
+#projects .project-card,
+#achievements .achievement-card {
+    background-color: #f8f8f8;
+    color: #333333;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects for these specific sections */
+#about .about-content:hover,
+#experience .timeline-content:hover,
+#projects .project-card:hover,
+#achievements .achievement-card:hover {
+    background-color: #ffffff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+#experience .timeline::after,
+#experience .timeline-item::after {
+    background-color: var(--primary-color);
+}
+
+#projects .tech-tags span {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* Additional styles for About Me section */
+#about .profile-picture img {
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure text is readable on white background */
+#about h2, #about h3, #about p,
+#experience h2, #experience h3, #experience p,
+#projects h2, #projects h3, #projects p,
+#achievements h2, #achievements h3, #achievements p {
+    color: #333333;
+}
+
+/* Section titles */
+#about .section-title,
+#experience .section-title,
+#projects .section-title,
+#achievements .section-title {
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+/* Dark theme adjustments for these specific sections */
+body.dark-theme #about,
+body.dark-theme #experience,
+body.dark-theme #projects,
+body.dark-theme #achievements {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-theme #about .about-content,
+body.dark-theme #experience .timeline-content,
+body.dark-theme #projects .project-card,
+body.dark-theme #achievements .achievement-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-theme #about .about-content:hover,
+body.dark-theme #experience .timeline-content:hover,
+body.dark-theme #projects .project-card:hover,
+body.dark-theme #achievements .achievement-card:hover {
+    background-color: #2a2a2a;
+}
+
+body.dark-theme #about h2, body.dark-theme #about h3, body.dark-theme #about p,
+body.dark-theme #experience h2, body.dark-theme #experience h3, body.dark-theme #experience p,
+body.dark-theme #projects h2, body.dark-theme #projects h3, body.dark-theme #projects p,
+body.dark-theme #achievements h2, body.dark-theme #achievements h3, body.dark-theme #achievements p {
+    color: #ffffff;
+}
+
+/* ... (rest of the CSS remains the same) ... */
 /* Heading hover effect */
 h1, h2, h3, h4, h5, h6 {
     transition: transform 0.3s ease, text-shadow 0.3s ease;
@@ -696,4 +807,56 @@ body.light-theme .contact-form button {
 
 body.light-theme .tech-tags span {
     color: var(--solid-background);
+}
+/* Achievements Section */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.achievement-card {
+    background-color: var(--card-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.achievement-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.achievement-content {
+    padding: 1.5rem;
+}
+
+.achievement-content h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-date {
+    font-style: italic;
+    color: var(--secondary-color);
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
 }

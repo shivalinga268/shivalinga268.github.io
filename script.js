@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         else {
             cursorSpan.classList.remove("typing");
             textArrayIndex++;
-            if(textArrayIndex >= textArray.length) textArrayIndex=0;
+            if(textArrayIndex>=textArray.length) textArrayIndex=0;
             setTimeout(type, typingDelay + 1100);
         }
     }
@@ -234,18 +234,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let isDarkTheme = true; // Start with dark theme
 
-    function setTheme(isDark) {
-        document.body.classList.toggle('light-theme', !isDark);
-        document.body.style.setProperty('--primary-color', isDark ? '#00a8e8' : '#0056b3');
-        document.body.style.setProperty('--secondary-color', isDark ? '#00e676' : '#28a745');
-        document.body.style.setProperty('--text-color', isDark ? '#ffffff' : '#333333');
-        document.body.style.setProperty('--card-background', isDark ? 'rgba(30, 30, 30, 0.8)' : 'rgba(255, 255, 255, 0.8)');
-        document.body.style.setProperty('--solid-background', isDark ? '#121212' : '#f8f9fa');
-    }
-
     themeSwitcher.addEventListener('click', () => {
         isDarkTheme = !isDarkTheme;
-        setTheme(isDarkTheme);
+        document.body.classList.toggle('light-theme', !isDarkTheme);
         localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
     });
 
@@ -253,85 +244,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         isDarkTheme = savedTheme === 'dark';
-        setTheme(isDarkTheme);
+        document.body.classList.toggle('light-theme', !isDarkTheme);
     }
 
     // Dynamic copyright year
     const currentYear = new Date().getFullYear();
     document.querySelector('footer p').innerHTML = `&copy; ${currentYear} Shivalinga Narayanappa. All rights reserved.`;
-
-    // Interactive effects for home page, main buttons, and headings
-    const homeSection = document.querySelector('#home');
-    const mainButtons = document.querySelectorAll('.btn');
-    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-
-    // Parallax effect for home section
-    window.addEventListener('scroll', () => {
-        const scrollPosition = window.pageYOffset;
-        homeSection.style.backgroundPositionY = scrollPosition * 0.7 + 'px';
-    });
-
-    // Glow effect for main buttons
-    mainButtons.forEach(button => {
-        button.addEventListener('mousemove', (e) => {
-            const rect = button.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            button.style.setProperty('--x', `${x}px`);
-            button.style.setProperty('--y', `${y}px`);
-            button.classList.add('btn-glow');
-        });
-
-        button.addEventListener('mouseleave', () => {
-            button.classList.remove('btn-glow');
-        });
-    });
-
-    // 3D tilt effect for headings
-    headings.forEach(heading => {
-        heading.addEventListener('mousemove', (e) => {
-            const rect = heading.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const angleX = (y - centerY) / 20;
-            const angleY = (centerX - x) / 20;
-            
-            heading.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
-        });
-
-        heading.addEventListener('mouseleave', () => {
-            heading.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
-        });
-    });
-
-    // Add ripple effect to buttons
-    function createRipple(event) {
-        const button = event.currentTarget;
-        const circle = document.createElement('span');
-        const diameter = Math.max(button.clientWidth, button.clientHeight);
-        const radius = diameter / 2;
-
-        circle.style.width = circle.style.height = `${diameter}px`;
-        circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
-        circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
-        circle.classList.add('ripple');
-
-        const ripple = button.getElementsByClassName('ripple')[0];
-
-        if (ripple) {
-            ripple.remove();
-        }
-
-        button.appendChild(circle);
-    }
-
-    const buttons = document.getElementsByTagName('button');
-    for (const button of buttons) {
-        button.addEventListener('click', createRipple);
-    }
 });
