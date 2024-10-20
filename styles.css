@@ -4,6 +4,7 @@
     --primary-color: #00a8e8;
     --secondary-color: #00e676;
     --text-color: #ffffff;
+    
     --card-background: rgba(30, 30, 30, 0.8);
     --solid-background: #121212;
 }
@@ -292,6 +293,8 @@ section {
     margin-bottom: 10px;
 }
 
+
+
 /* Projects Section */
 .project-grid {
     display: grid;
@@ -578,7 +581,7 @@ footer {
 #experience .timeline-content,
 #projects .project-card,
 #achievements .achievement-card {
-    background-color: #f8f8f8;
+    background-color: #ffffff;
     color: #333333;
     position: relative;
     z-index: 1;
@@ -648,21 +651,18 @@ body.dark-theme #achievements .achievement-card {
     color: #ffffff;
 }
 
-body.dark-theme #about .about-content:hover,
-body.dark-theme #experience .timeline-content:hover,
-body.dark-theme #projects .project-card:hover,
-body.dark-theme #achievements .achievement-card:hover {
-    background-color: #2a2a2a;
-}
-
-body.dark-theme #about h2, body.dark-theme #about h3, body.dark-theme #about p,
-body.dark-theme #experience h2, body.dark-theme #experience h3, body.dark-theme #experience p,
-body.dark-theme #projects h2, body.dark-theme #projects h3, body.dark-theme #projects p,
-body.dark-theme #achievements h2, body.dark-theme #achievements h3, body.dark-theme #achievements p {
+body.dark-theme #experience .timeline-content p,
+body.dark-theme #experience .timeline-content ul,
+body.dark-theme #experience .timeline-content li {
     color: #ffffff;
 }
 
-/* ... (rest of the CSS remains the same) ... */
+/* Ensure text visibility in both modes */
+#experience .timeline-content p,
+#experience .timeline-content ul,
+#experience .timeline-content li {
+    color: inherit;
+}
 /* Heading hover effect */
 h1, h2, h3, h4, h5, h6 {
     transition: transform 0.3s ease, text-shadow 0.3s ease;
